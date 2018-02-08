@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Defined colors:
+// primary
+$movie-app-primary: mat-palette(#22122C);
+// secondary
+$movie-app-accent:  mat-palette(#1E555A);
+// warn
+$movie-app-warn:    mat-palette(#233354);
+
+
+$movie-app-theme: mat-light-theme($movie-app-accent, $movie-app-primary, $movie-app-warn);
+
+@include angular-material-theme($candy-app-theme);
