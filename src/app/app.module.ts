@@ -12,9 +12,10 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {MatButtonModule, MatCheckboxModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MaterialModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
