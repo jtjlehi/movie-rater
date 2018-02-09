@@ -1,3 +1,13 @@
-<p>
-  navbar works!
-</p>
+<mat-toolbar color='primary' >
+  <mat-toolbar-row>
+    <span>Movie Rater Application</span>
+    <div>
+      <button mat-button >Home Page</button>
+      <button mat-button *ngIf='!loggedIn' >Login</button>
+      <button mat-button *ngIf='loggedIn' >
+        {{userInfo}}
+      </button>
+    </div>
+  </mat-toolbar-row>  
+</mat-toolbar>
+<!-- If the User cannot do it, or won't be able to do it by the end of the sprint, don't tell them they can!!!!!!! -->
