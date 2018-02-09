@@ -12,6 +12,9 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
