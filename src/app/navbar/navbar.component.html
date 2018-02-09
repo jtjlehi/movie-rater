@@ -2,12 +2,21 @@
   <mat-toolbar-row>
     <span>Movie Rater Application</span>
     <div>
-      <button mat-button >Home Page</button>
-      <button mat-button *ngIf='!loggedIn' >Login</button>
-      <button mat-button *ngIf='loggedIn' >
+      <button mat-button
+        routerLink='/home' >Home Page</button>
+      <button mat-button *ngIf='!loggedIn'
+        routerLink='/login' >Login</button>
+      <button mat-button *ngIf='loggedIn' 
+        [matMenuTriggerFor]='userMenu' >
         {{userInfo}}
       </button>
     </div>
   </mat-toolbar-row>  
 </mat-toolbar>
+<mat-menu #userMenu='matMenu' >
+  <button mat-menu-item>Update User Info</button>
+  <button mat-menu-item>Logout</button>
+  <button mat-menu-item>Feedback</button>
+  <button mat-menu-item>Help</button>
+</mat-menu>
 <!-- If the User cannot do it, or won't be able to do it by the end of the sprint, don't tell them they can!!!!!!! -->
