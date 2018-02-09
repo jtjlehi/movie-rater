@@ -11,6 +11,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     WishListComponent,
     UpcomingComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserAnimationsModule,
