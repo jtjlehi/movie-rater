@@ -1,3 +1,29 @@
-<p>
-  login works!
-</p>
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput required
+        placeholder="email"
+        [formControl]="email"
+        type="email"
+        name="email" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput required
+        placeholder="password"
+        [formControl]="password"
+        type="password"
+        name="password" >
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button
+    (click)='login()'
+    color='accent' >
+      Login
+    </button>
+  </mat-card-actions>
+  <mat-card-footer>
+    First Time? <a routerLink='new-user'>Set Up an Account</a> 
+  </mat-card-footer>
+</mat-card>

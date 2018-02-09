@@ -16,6 +16,7 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule} from '@angular/materi
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
