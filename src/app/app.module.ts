@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -26,7 +27,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     UpcomingComponent,
     LoginComponent,
     HomePageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserAnimationsModule,
