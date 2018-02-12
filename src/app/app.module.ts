@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CoreModule } from './core/core.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
 
 import { LoginModule } from './login/login.module';
 
@@ -25,7 +27,8 @@ import { LoginModule } from './login/login.module';
     HomePageModule,
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
