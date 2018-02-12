@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule
   ],
   declarations: [],
-  providers: []
+  providers: [AuthService]
 })
 export class CoreModule { }
