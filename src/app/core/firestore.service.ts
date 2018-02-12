@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { Observable } from 'rxjs/Observable';
 
 import { User } from '@firebase/auth-types';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class FirestoreService {

@@ -4,6 +4,6 @@ export interface User {
     uid: string;
     name: string;
     email: string;
-    friendsUid: Array<string>;
-    wishListId: Array<string>;
+    friends: Array<string>;
+    wishList: Array<string>;
 }
