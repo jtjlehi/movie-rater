@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { FirestoreService } from '../core/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   email = new FormControl();
   password = new FormControl();
 
-  constructor() { }
+  constructor(private firestore: FirestoreService) { }
 
   ngOnInit() {
   }
