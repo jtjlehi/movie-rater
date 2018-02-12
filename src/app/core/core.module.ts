@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthService } from './auth.service';
 import { FirebaseModule } from './firebase/firebase.module';
+import { FirestoreService } from './firestore.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { FirebaseModule } from './firebase/firebase.module';
     MaterialModule
   ],
   declarations: [],
-  providers: [AuthService]
+  providers: [AuthService, FirestoreService]
 })
 export class CoreModule { }
