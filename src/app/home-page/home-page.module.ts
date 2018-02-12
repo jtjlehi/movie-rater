@@ -15,6 +15,12 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
     FriendsComponent,
     WishListComponent,
     UpcomingComponent,
+  ],
+  exports: [
+    HomePageComponent,
+    FriendsComponent,
+    WishListComponent,
+    UpcomingComponent
   ]
 })
 export class HomePageModule { }
