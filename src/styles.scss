@@ -1,1 +1,58 @@
 @import './theme.scss';
+body{
+  max-height:1200px;
+  border-radius: 30px;
+  background-color: lightgray;
+}
+.upcomingMovies{
+  border: solid 1px;
+  border-radius: 25px;
+  margin: 10px 1px 10px 1px;
+}
+.friendsCard{
+  border: solid 1px;
+  border-radius: 50px;
+  margin: 10px 1px 10px 1px;
+  display:flex;
+  flex-grow: 1;
+}
+.friend{
+  width:35%;
+  margin:10px 1px 10px 1px;
+
+}
+.wishList{
+  border: solid 1px;
+  border-radius: 50px;
+  margin: 10px 1px 10px 1px;
+}
+.currentMovies{
+  border: solid 1px;
+  border-radius: 50px;
+  margin: 10px 1px 10px 10px;
+  height:100%;
+}
+.card{
+  display:flex;
+}
+.leftDiv{
+  width: 68%;
+}
+.rightDiv{
+  width: 32%;
+}
+.img{
+  max-width:100px;
+  height:auto;
+  text-align: center;
+}
+.testBorder{
+  border: 10px solid black;
+}
+.needsFlex{
+  display: flex;
+}
+.images{
+  width:1600px;
+  height:400px;
+}
