@@ -6,10 +6,12 @@ import { FriendsComponent } from './friends/friends.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CurrentMoviesComponent } from './current-movies/current-movies.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    CoreModule
   ],
   declarations: [
     CurrentMoviesComponent,
