@@ -17,6 +17,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CurrentMoviesComponent } from './home-page/current-movies/current-movies.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     HomePageComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    CurrentMoviesComponent
   ],
   imports: [
     ReactiveFormsModule,
