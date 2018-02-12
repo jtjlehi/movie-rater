@@ -5,40 +5,27 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app-component/app.component';
-import { MaterialModule } from './material/material.module';
-import { FriendsComponent } from './friends/friends.component';
-import { WishListComponent } from './wish-list/wish-list.component';
-import { UpcomingComponent } from './upcoming/upcoming.component';
-import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatCardModule} from '@angular/material';
-import {CdkTableModule} from '@angular/cdk/table';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { CoreModule } from './core/core.module';
+import { HomePageModule } from './home-page/home-page.module';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FriendsComponent,
-    WishListComponent,
-    UpcomingComponent,
-    LoginComponent,
-    HomePageComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
-    BrowserAnimationsModule,
+    LoginModule,
+    HomePageModule,
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatCardModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
