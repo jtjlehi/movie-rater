@@ -6,12 +6,15 @@ import { FriendsComponent } from './friends/friends.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CurrentMoviesComponent } from './current-movies/current-movies.component';
-import {CoreModule} from "../core/core.module";
+import {CoreModule} from '../core/core.module';
+import {MovieService} from '../Services/movies.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ],
   declarations: [
     CurrentMoviesComponent,
@@ -19,6 +22,9 @@ import {CoreModule} from "../core/core.module";
     FriendsComponent,
     WishListComponent,
     UpcomingComponent,
+  ],
+  providers: [
+    MovieService
   ],
   exports: [
     CurrentMoviesComponent,

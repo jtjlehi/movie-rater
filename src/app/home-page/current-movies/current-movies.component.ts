@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MovieService} from '../../Services/movies.service';
+import {Movie} from '../../Services/movies.data';
 
 @Component({
   selector: 'app-current-movies',
@@ -6,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./current-movies.component.scss']
 })
 export class CurrentMoviesComponent implements OnInit {
+  currentMovie: string;
+  cardCourses: string;
 
-  constructor() { }
+  constructor(private movieService: MovieService) {
+  }
+
   ngOnInit() {
-      this.currentMovie = this.currentMovies.getGolfData().subscribe(data => {
-        this.currentMovie = data;
-        this.cardCourses = this.currentMovie.courses;
-      });
-
-    }
+    this.movieService.getMovies().subscribe((movies: Movie[]) => {
+      console.log(movies);
+    });
+  }
 }

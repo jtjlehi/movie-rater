@@ -10,7 +10,7 @@ import {Movie} from '../Services/movies.data';
 @Injectable()
 export class MovieService {
 
-  public movieUrl: string = 'http://www.omdbapi.com/?&apikey=afa663eb';
+  public movieUrl: string = 'http://www.omdbapi.com/?s=happy&apikey=afa663eb';
   private Movies: string;
 
   constructor(private httpClient: HttpClient) { }
