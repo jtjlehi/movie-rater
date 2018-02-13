@@ -6,9 +6,15 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { Observable } from 'rxjs/Observable';
 import { User } from './interfaces/user.interface';
+import {
+  Router,
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+} from '@angular/router';
 
 @Injectable()
-export class AuthService {
+export class AuthService implements CanActivate {
 
   // tslint:disable-next-line:no-any
   public authState: any = null;
@@ -16,10 +22,10 @@ export class AuthService {
   private userDoc: AngularFirestoreDocument<User> = null;
   private userCollection: AngularFirestoreCollection<User>;
 
-
   constructor(
     private afAuth: AngularFireAuth,
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private router: Router
   ) {
     this.userCollection = afs.collection<User>('users');
     this.afAuth.authState.subscribe((auth) => {
@@ -32,6 +38,20 @@ export class AuthService {
         }
       }
     });
+  }
+
+  // returns the current user
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return this.authGuard();
+  }
+
+  // Auth guard
+  public authGuard(): boolean {
+    if (this.authenticated) {
+      return true;
+    }
+    this.router.navigate(['/login']);
+    return false;
   }
 
   // checkers for authentication and database info to avoid errors
