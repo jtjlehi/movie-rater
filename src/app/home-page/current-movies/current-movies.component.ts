@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CurrentMoviesComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit() {
-  }
+      this.currentMovie = this.currentMovies.getGolfData().subscribe(data => {
+        this.currentMovie = data;
+        this.cardCourses = this.currentMovie.courses;
+      });
 
+    }
 }
