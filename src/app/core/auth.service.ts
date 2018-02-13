@@ -12,8 +12,8 @@ export class AuthService {
 
   // tslint:disable-next-line:no-any
   public authState: any = null;
-  private user: User;
-  private userDoc: AngularFirestoreDocument<User>;
+  private user: User | null = null;
+  private userDoc: AngularFirestoreDocument<User> = null;
   private userCollection: AngularFirestoreCollection<User>;
 
 
@@ -22,18 +22,40 @@ export class AuthService {
     private afs: AngularFirestore
   ) {
     this.userCollection = afs.collection<User>('users');
+    this.afAuth.authState.subscribe((auth) => {
+      this.authState = auth;
+      if (this.authenticated) {
+        this.setUserDoc();
+        this.setUser();
+        if (this.newUser) {
+          this.addUser();
+        }
+      }
+    });
   }
 
-  public googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    this.socialSignIn(provider);
-  }
-
+  // checkers for authentication and database info to avoid errors
   // returns true if user is logged in
   get authenticated(): boolean {
     return this.authState !== null;
   }
 
+  // returns true if the userDoc is set
+  get userDocSet(): boolean {
+    return this.userDoc !== null;
+  }
+
+  // tests to see if the user is set
+  get userIsSet(): boolean {
+    return this.user !== null;
+  }
+
+  // finds if it is a new user
+  get newUser(): boolean | Error {
+    return this.authenticated && this.userDocSet && !this.userIsSet;
+  }
+
+  // grab info off of the user property.
   // returns the current user
   get currentUser(): User | null {
     return this.authenticated ? this.user : null;
@@ -46,11 +68,7 @@ export class AuthService {
 
   // returns current users display name
   get currentUserDisplayName(): string {
-    if (!this.authState) {
-      return 'Guest';
-    } else {
-      return this.authState['displayName'] || 'User without a Name';
-    }
+    return this.authenticated ? this.authState['displayName'] || 'User without a Name' : 'Guest';
   }
 
   // returns current users email
@@ -58,44 +76,57 @@ export class AuthService {
     return this.authenticated ? this.authState.email : '';
   }
 
+  // login types
+  // google login
+  public googleLogin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    this.socialSignIn(provider);
+  }
+
+  // facebook login
   public facebookLogin() {
     throw new Error('facebookLogin() not implemented in firebase');
     // const provider = new firebase.auth.FacebookAuthProvider();
     // this.socialSignIn(provider);
   }
 
+  // the login service called in both
   private socialSignIn(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
-      .then((credential) => {
-        this.authState = credential.user;
-        this.userDoc = this.afs.doc<User>(`user/${this.currentUserId}`);
-        this.addUser();
-        this.setUser();
-      })
       .catch(error => console.log(error));
   }
 
+  // signing out
+  signOut(): void {
+    this.afAuth.auth.signOut();
+  }
+
+  // this adds the user to firestore
   private addUser() {
     this.userDoc.set({
       uid: this.currentUserId,
       name: this.currentUserDisplayName,
       email: this.currentUserEmail,
-      friends: [''],
-      wishList: ['']
+      friends: [],
+      wishList: []
     });
   }
 
   // this sets the private user property
   private setUser(): User | null {
-    if (!this.authenticated) {
-      return null;
-    } else {
+    if (this.authenticated) {
       this.userDoc.valueChanges().subscribe((user) => {
-        console.log(user);
         this.user = user;
       });
-      return this.user;
+    } else {
+      this.user = null;
     }
+    return this.user;
+  }
+
+  // this sets the userDoc property
+  private setUserDoc() {
+    this.userDoc = this.afs.doc<User>(`users/${this.currentUserId}`);
   }
 
 }

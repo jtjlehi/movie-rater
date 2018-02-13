@@ -34,8 +34,21 @@ export class LoginComponent implements OnInit {
     this.auth.facebookLogin();
   }
 
+  displayUserInfo() {
+    console.log(this.auth.currentUser);
+  }
+
   isLoggedIn(): boolean {
+    console.log(this.auth.authenticated);
     return this.auth.authenticated;
+  }
+
+  signOut() {
+    this.auth.signOut();
+  }
+
+  newUser() {
+    console.log(this.auth.newUser);
   }
 
 }
