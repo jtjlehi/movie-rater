@@ -4,10 +4,14 @@
     
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="loginWithGoogle()" >login with google</button>
-    <button mat-button (click)="loginWithFacebook()" >login with facebook</button>
+    <button mat-raised-button
+      (click)="loginWithGoogle()"
+      color="accent" >login with google</button>
+    <button mat-raised-button
+      (click)="loginWithFacebook()"
+      color="accent" >login with facebook</button>
+    <button mat-raised-button
+      (click)="createAccount()"
+      color="accent" >Create Account</button>
   </mat-card-actions>
-  <mat-card-footer>
-    First Time? <a routerLink="/new-user" routerLinkActive="active" >Set Up an Account</a> 
-  </mat-card-footer>
 </mat-card>

@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AuthService } from './core/auth.service';
+import { NewUserComponent } from './login/new-user/new-user.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'new-user',
+    component: NewUserComponent
   },
   {
     path: '',

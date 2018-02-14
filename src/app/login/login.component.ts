@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 
 import { FirestoreService } from '../core/firestore.service';
 import { AuthService } from '../core/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,14 +17,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private firestore: FirestoreService,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-  }
-
-  login() {
-    throw new Error('login() not implemented yet');
   }
 
   loginWithGoogle() {
@@ -34,21 +32,12 @@ export class LoginComponent implements OnInit {
     this.auth.facebookLogin();
   }
 
-  displayUserInfo() {
-    console.log(this.auth.currentUser);
-  }
-
-  isLoggedIn(): boolean {
-    console.log(this.auth.authenticated);
-    return this.auth.authenticated;
-  }
-
   signOut() {
     this.auth.signOut();
   }
 
-  newUser() {
-    console.log(this.auth.newUser);
+  createAccount() {
+    this.router.navigate(['new-user']);
   }
 
 }
