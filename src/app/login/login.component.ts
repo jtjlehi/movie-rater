@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 
 import { FirestoreService } from '../core/firestore.service';
 import { AuthService } from '../core/auth.service';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 import { NewUserComponent } from './new-user/new-user.component';
 
 @Component({
@@ -21,13 +21,20 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private dialog: MatDialog,
     private dialogRef: MatDialogRef<LoginComponent>,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
   }
 
   loginWithGoogle() {
-    this.auth.googleLogin();
+    this.auth.googleLogin()
+    .then(() => {
+      this.dialogRef.close();
+    })
+    .catch((error) => {
+      const snackBarRef = this.snackBar.open(error.message, 'hide', {duration: 4000});
+    });
   }
 
   loginWithFacebook() {

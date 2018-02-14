@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-new-user',
@@ -8,13 +9,23 @@ import { AuthService } from '../../core/auth.service';
 })
 export class NewUserComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(
+    public auth: AuthService,
+    public dialogRef: MatDialogRef<NewUserComponent>,
+    public snackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
   }
 
   signInWithGoogle() {
-    this.auth.googleLogin();
+    this.auth.googleLogin()
+    .then(() => {
+      this.dialogRef.close();
+    })
+    .catch((error) => {
+      const snackBarRef = this.snackBar.open(error.message, 'hide', {duration: 4000});
+    });
   }
 
   signInWithFacebook() {
