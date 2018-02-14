@@ -3,7 +3,8 @@ import { FormControl } from '@angular/forms';
 
 import { FirestoreService } from '../core/firestore.service';
 import { AuthService } from '../core/auth.service';
-import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { NewUserComponent } from './new-user/new-user.component';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private firestore: FirestoreService,
     private auth: AuthService,
-    private router: Router
+    private dialog: MatDialog,
+    private dialogRef: MatDialogRef<LoginComponent>,
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,10 @@ export class LoginComponent implements OnInit {
   }
 
   createAccount() {
-    this.router.navigate(['new-user']);
+    const newUserRef = this.dialog.open(NewUserComponent);
+    newUserRef.afterClosed().subscribe(() => {
+      this.dialogRef.close();
+    });
   }
 
 }

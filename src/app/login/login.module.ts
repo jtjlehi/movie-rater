@@ -9,6 +9,10 @@ import { NewUserComponent } from './new-user/new-user.component';
     CommonModule,
     CoreModule
   ],
+  entryComponents: [
+    LoginComponent,
+    NewUserComponent
+  ],
   declarations: [
     LoginComponent,
     NewUserComponent
