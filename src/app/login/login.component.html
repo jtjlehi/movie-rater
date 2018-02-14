@@ -1,35 +1,13 @@
 <mat-card>
   <mat-card-title>Login</mat-card-title>
   <mat-card-content>
-    <mat-form-field>
-      <input matInput required
-        placeholder="email"
-        [formControl]="email"
-        type="email"
-        name="email" >
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput required
-        placeholder="password"
-        [formControl]="password"
-        type="password"
-        name="password" >
-    </mat-form-field>
+    
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button
-    (click)='login()'
-    color='accent' >
-      Login
-    </button>
+    <button mat-button (click)="loginWithGoogle()" >login with google</button>
+    <button mat-button (click)="loginWithFacebook()" >login with facebook</button>
   </mat-card-actions>
   <mat-card-footer>
-    First Time? <a routerLink='new-user'>Set Up an Account</a> 
+    First Time? <a routerLink="/new-user" routerLinkActive="active" >Set Up an Account</a> 
   </mat-card-footer>
 </mat-card>
-<button mat-button (click)="loginWithGoogle()" >login with google</button>
-<button mat-button (click)="loginWithFacebook()" >login with facebook</button>
-<button mat-button (click)="isLoggedIn()" >Are You Logged In?</button>
-<button mat-button (click)="newUser()" >Are you a new user?</button>
-<button mat-button (click)="displayUserInfo()" >Display User info</button>
-<button mat-button (click)="signOut()" >sign out</button>
