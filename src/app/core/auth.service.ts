@@ -14,7 +14,7 @@ import {
 } from '@angular/router';
 
 @Injectable()
-export class AuthService implements CanActivate {
+export class AuthService {
 
   // tslint:disable-next-line:no-any
   public authState: any = null;
@@ -40,18 +40,9 @@ export class AuthService implements CanActivate {
     });
   }
 
-  // returns the current user
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    return this.authGuard();
-  }
-
   // Auth guard
   public authGuard(): boolean {
-    if (this.authenticated) {
-      return true;
-    }
-    this.router.navigate(['/login']);
-    return false;
+    return this.authenticated;
   }
 
   // checkers for authentication and database info to avoid errors

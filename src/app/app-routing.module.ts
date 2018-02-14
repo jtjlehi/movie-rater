@@ -11,16 +11,7 @@ import { NewUserComponent } from './login/new-user/new-user.component';
 const routes: Routes = [
   {
     path: 'home',
-    component: HomePageComponent,
-    canActivate: [AuthService]
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'new-user',
-    component: NewUserComponent
+    component: HomePageComponent
   },
   {
     path: '',
