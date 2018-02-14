@@ -1,6 +1,6 @@
 @import './theme.scss';
 body{
-  max-height:1200px;
+  max-width:1450px;
   border-radius: 30px;
   background-color: lightgray;
 }
@@ -22,15 +22,14 @@ body{
 
 }
 .wishList{
+  width:30%;
+  margin:10px 1px 10px 1px;
+  flex-direction: row;
+}
+.wish{
   border: solid 1px;
   border-radius: 50px;
   margin: 10px 1px 10px 1px;
-}
-.currentMovies{
-  border: solid 1px;
-  border-radius: 50px;
-  margin: 10px 1px 10px 10px;
-  height:100%;
 }
 .card{
   display:flex;
@@ -41,18 +40,28 @@ body{
 .rightDiv{
   width: 32%;
 }
-.img{
-  max-width:100px;
-  height:auto;
-  text-align: center;
-}
-.testBorder{
-  border: 10px solid black;
-}
 .needsFlex{
   display: flex;
+}
+.flex{
+  display:flex;
 }
 .images{
   width:1420px;
   height:400px;
+}
+.current{
+  border: solid 1px;
+  margin: 10px 1px 10px 1px;
+  display:flex;
+}
+.currentMovies{
+  border: solid 1px;
+  border-radius: 50px;
+  margin: 10px 1px 10px 10px;
+  height:80%;
+  width:35%;
+}
+.header{
+  text-align: center;
 }
