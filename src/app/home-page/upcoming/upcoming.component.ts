@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MovieService} from '../../Services/movies.service';
 
 @Component({
   selector: 'app-upcoming',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
+
+    this.movieService.getUpcomingMovies().subscribe((movies) => {
+      console.log(movies);
+    });
   }
 
 }

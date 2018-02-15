@@ -10,17 +10,28 @@ import {Movie} from '../Services/movies.data';
 @Injectable()
 export class MovieService {
 
-  public movieUrl: string = 'http://www.omdbapi.com/?s=happy&apikey=afa663eb';
+  private movieUrl: string = 'https://api.themoviedb.org/3/movie/';
+  private apiKey: string = 'f1dc689823def4f561ce96b21153f793';
   private Movies: string;
 
   constructor(private httpClient: HttpClient) { }
 
-  getMovies(): Observable<Movie[]> {
+  getUpcomingMovies(): Observable<Movie[]> {
     return this.httpClient
-      .get<Movie[]>(this.movieUrl)
-      .pipe(catchError(this.handleError));
+    // tslint:disable-next-line: no-any
+      .get<any>(`${this.movieUrl}upcoming?api_key=${this.apiKey}`)
+      .pipe(
+        map(response => response.results),
+        catchError(this.handleError));
   }
-
+  getCurrentMovies(): Observable<Movie[]> {
+    return this.httpClient
+    // tslint:disable-next-line: no-any
+      .get<any>(`${this.movieUrl}now_playing?api_key=${this.apiKey}`)
+      .pipe(
+        map(response => response.results),
+        catchError(this.handleError));
+  }
   getMovie(movieId: string): Observable<Movie> {
     return this.httpClient
       .get<Movie[]>(this.movieUrl)

@@ -15,7 +15,7 @@ export class CurrentMoviesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.movieService.getMovies().subscribe((movies: Movie[]) => {
+    this.movieService.getUpcomingMovies().subscribe((movies: Movie[]) => {
       console.log(movies);
     });
   }
