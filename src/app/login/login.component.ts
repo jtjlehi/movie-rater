@@ -38,7 +38,13 @@ export class LoginComponent implements OnInit {
   }
 
   loginWithFacebook() {
-    this.auth.facebookLogin();
+    this.auth.facebookLogin()
+    .then(() => {
+      this.dialogRef.close();
+    })
+    .catch((error) => {
+      const snackBarRef = this.snackBar.open(error.message, 'hide', {duration: 4000});
+    });
   }
 
   signOut() {

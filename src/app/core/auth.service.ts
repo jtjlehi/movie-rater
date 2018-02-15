@@ -87,6 +87,11 @@ export class AuthService {
     return this.authenticated ? this.authState.email : '';
   }
 
+  // return user auth provider
+  get provider(): string {
+    return this.authenticated ? this.authState.providerData[0].providerId : '';
+  }
+
   // login types
   // google login
   public googleLogin() {
@@ -126,6 +131,7 @@ export class AuthService {
       uid: this.currentUserId,
       name: this.currentUserDisplayName,
       email: this.currentUserEmail,
+      provider: this.provider,
       friends: [],
       wishList: []
     });
