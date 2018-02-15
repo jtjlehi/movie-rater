@@ -93,9 +93,6 @@ export class AuthService {
     const provider = new firebase.auth.GoogleAuthProvider();
     return new Promise((resolve, reject) => {
       this.socialSignIn(provider)
-      .then(() => {
-        resolve();
-      })
       .catch(error => {
         reject(error);
       });
@@ -104,11 +101,13 @@ export class AuthService {
 
   // facebook login
   public facebookLogin() {
-    throw new Error('facebookLogin() not implemented in firebase');
-    // const provider = new firebase.auth.FacebookAuthProvider();
-    // return new Promise(() => {
-    //   this.socialSignIn(provider);
-    // });
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return new Promise((resolve, reject) => {
+      this.socialSignIn(provider)
+      .catch(error => {
+        reject(error);
+      });
+    });
   }
 
   // the login service called in both
