@@ -127,6 +127,8 @@ export class AuthService {
   // signing out
   signOut(): void {
     this.afAuth.auth.signOut();
+    this.user = null;
+    this.userObservable.next(this.user);
   }
 
   // this adds the user to firestore
@@ -146,7 +148,7 @@ export class AuthService {
     if (this.authenticated) {
       this.userDoc.valueChanges().subscribe((user) => {
         this.user = user;
-        this.userObservable.next(user);
+        this.userObservable.next(this.user);
       });
     } else {
       this.user = null;
