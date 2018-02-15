@@ -14,6 +14,7 @@ body{
   border-radius: 50px;
   margin: 10px 1px 10px 1px;
   display:flex;
+  flex-wrap:wrap;
   flex-grow: 1;
 }
 .friend{
@@ -25,6 +26,7 @@ body{
   width:30%;
   margin:10px 1px 10px 1px;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .wish{
   border: solid 1px;
@@ -60,8 +62,15 @@ body{
   border-radius: 50px;
   margin: 10px 1px 10px 10px;
   height:80%;
-  width:35%;
+  width:30%;
 }
 .header{
   text-align: center;
+}
+.movieImage{
+  height: 400px;
+  width: 280px;
+}
+.matCard{
+  width: 27.5%;
 }
