@@ -5,18 +5,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { AuthService } from './core/auth.service';
+import { NewUserComponent } from './login/new-user/new-user.component';
+
 const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
