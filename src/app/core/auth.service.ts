@@ -12,12 +12,15 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class AuthService {
 
   // tslint:disable-next-line:no-any
   public authState: any = null;
+  public userObservable: Subject<User>;
   private user: User | null = null;
   private userDoc: AngularFirestoreDocument<User> = null;
   private userCollection: AngularFirestoreCollection<User>;
@@ -28,6 +31,7 @@ export class AuthService {
     private router: Router
   ) {
     this.userCollection = afs.collection<User>('users');
+    this.userObservable = new Subject();
     this.afAuth.authState.subscribe((auth) => {
       this.authState = auth;
       if (this.authenticated) {
@@ -142,6 +146,7 @@ export class AuthService {
     if (this.authenticated) {
       this.userDoc.valueChanges().subscribe((user) => {
         this.user = user;
+        this.userObservable.next(user);
       });
     } else {
       this.user = null;
