@@ -1,3 +1,25 @@
-<p>
-  movie works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{movieTitle}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image
+    [src]="movieImg"
+    [alt]="imgDesc" >
+  <mat-card-content>
+    <p>
+      {{movieDescription}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="inWishList"
+      mat-raised-button 
+      color="accent" >
+      Remove From Wish List
+    </button>
+    <button *ngIf="!inWishList"
+      mat-raised-button 
+      color="accent" >
+     Add To Wish List
+    </button>
+  </mat-card-actions>
+</mat-card>
