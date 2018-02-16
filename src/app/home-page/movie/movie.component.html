@@ -1,13 +1,13 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>{{movieTitle}}</mat-card-title>
+    <mat-card-title>{{movie.title}}</mat-card-title>
   </mat-card-header>
   <img mat-card-image
-    [src]="movieImg"
-    [alt]="imgDesc" >
+    [src]="movie.img.link"
+    [alt]="movie.img.description" >
   <mat-card-content>
     <p>
-      {{movieDescription}}
+      {{movie.description}}
     </p>
   </mat-card-content>
   <mat-card-actions>
