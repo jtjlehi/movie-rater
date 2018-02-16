@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {catchError} from 'rxjs/operators/catchError';
 import { map } from 'rxjs/operators/map';
-import {Movie} from '../Services/movies.data';
+import {Movie} from '../Services/movies.interface';
 
 
 @Injectable()
