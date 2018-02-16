@@ -9,7 +9,6 @@ import {Movie} from '../../Services/movies.data';
 })
 export class CurrentMoviesComponent implements OnInit {
   currentMovie: string;
-  cardCourses: string;
   Movies;
   original_title;
 
@@ -17,7 +16,6 @@ export class CurrentMoviesComponent implements OnInit {
   }
   ngOnInit() {
     this.movieService.getCurrentMovies().subscribe((movies: Movie[]) => {
-      console.log(movies);
     });
   }
 }

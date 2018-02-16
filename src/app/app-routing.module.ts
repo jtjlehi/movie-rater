@@ -7,6 +7,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {UpcomingComponent} from './home-page/upcoming/upcoming.component';
 import {CurrentMoviesComponent} from './home-page/current-movies/current-movies.component';
 
+import { AuthService } from './core/auth.service';
+import { NewUserComponent } from './login/new-user/new-user.component';
+
 const routes: Routes = [
   {
     path: 'home',
@@ -26,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {

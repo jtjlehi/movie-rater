@@ -4,6 +4,11 @@ Error: File to import not found or unreadable: ~@angular/material/theming.
         from line 1 of styles.scss
 
 1: @import './theme.scss';
+2: body{
+3:   max-width:1450px;
+4:   border-radius: 30px;
+5:   background-color: lightgray;
+6: }
 
 Backtrace:
 theme.scss:1
@@ -63,4 +68,4 @@ styles.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~@angular/material/theming.\A         on line 1 of theme.scss\A         from line 1 of styles.scss\A \A 1: @import './theme.scss';"; }
+  content: "Error: File to import not found or unreadable: ~@angular/material/theming.\A         on line 1 of theme.scss\A         from line 1 of styles.scss\A \A 1: @import './theme.scss';\A 2: body{\A 3:   max-width:1450px;\A 4:   border-radius: 30px;\A 5:   background-color: lightgray;\A 6: }"; }
