@@ -10,6 +10,7 @@ import {CoreModule} from '../core/core.module';
 import {MovieService} from '../Services/movies.service';
 import {HttpClientModule} from '@angular/common/http';
 import { MovieComponent } from './movie/movie.component';
+import { ImgService } from '../img.service';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { MovieComponent } from './movie/movie.component';
     MovieComponent,
   ],
   providers: [
-    MovieService
+    MovieService,
+    ImgService
   ],
   exports: [
     CurrentMoviesComponent,
