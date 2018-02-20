@@ -2,7 +2,8 @@ export interface MovieObj {
     title: string;
     description: string
     image: {
-        link: string;
+        url: string;
+        poster_ref: string;
         description: string;
     }
     public_rating: number;
