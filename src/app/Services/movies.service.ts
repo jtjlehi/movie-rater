@@ -1,10 +1,13 @@
 ///<reference path="../../../node_modules/rxjs/operators/catchError.d.ts"/>
 import { HttpClient } from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {catchError} from 'rxjs/operators/catchError';
+import { Injectable } from '@angular/core';
+
+import { Observable } from 'rxjs/Observable';
+import { catchError } from 'rxjs/operators/catchError';
 import { map } from 'rxjs/operators/map';
-import {Movie} from '../Services/movies.interface';
+
+import { Movie } from '../Services/movies.interface';
+import { Configuration } from './configuration.interface';
 
 
 @Injectable()
