@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from '../../Services/movies.service';
+import { ImgService } from '../../img.service';
+import { MovieObj } from '../movieObj.interface';
 
 @Component({
   selector: 'app-upcoming',
@@ -8,12 +10,21 @@ import {MovieService} from '../../Services/movies.service';
 })
 export class UpcomingComponent implements OnInit {
 
-  constructor(private movieService: MovieService) { }
+  imgUrls: string[];
+  upcomingMovies: MovieObj;
+
+  constructor(
+    private movieService: MovieService,
+    private imgService: ImgService
+  ) { }
 
   ngOnInit() {
-
-    this.movieService.getUpcomingMovies().subscribe((movies) => {
+    this.imgService.getImgUrls().then(urls => {
+      this.imgUrls = urls;
+    });
+    this.movieService.getUpcomingMovies().subscribe(movies => {
       console.log(movies);
+      this.upcomingMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }
 
