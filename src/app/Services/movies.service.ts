@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators/catchError';
 import { map } from 'rxjs/operators/map';
+import * as _ from 'lodash';
 
 import { Movie } from '../Services/movies.interface';
 import { Configuration } from './configuration.interface';
@@ -42,6 +43,22 @@ export class MovieService {
         map((movies: Movie[]) => movies.find(movie => movie.imdbID === movieId)),
         catchError(this.handleError)
     );
+  }
+  mapMovie(movies, imgUrls: string[]) {
+    const returnMovies = _.chain(movies)
+      .map((movie) => {
+        return {
+          title: movie.title,
+          description: movie.overview,
+          image: {
+            url: imgUrls[(imgUrls.length - 1)] + movie.poster_path,
+            poster_ref: movie.poster_path,
+            description: `movie poster for ${movie.title}`
+          },
+          public_rating: movie.vote_average
+        }
+      }).value();
+    return returnMovies;
   }
 
   handleError(error) {

@@ -29,21 +29,7 @@ export class CurrentMoviesComponent implements OnInit {
     });
     this.movieService.getCurrentMovies().subscribe(movies => {
       console.log('current movies: ', movies);
-      const returnMovie = _.chain(movies)
-        .map((movie) => {
-          return {
-            title: movie.title,
-            description: movie.overview,
-            image: {
-              url: this.imgUrls[(this.imgUrls.length - 1)] + movie.poster_path,
-              poster_ref: movie.poster_path,
-              description: `movie poster for ${movie.title}`
-            },
-            public_rating: movie.vote_average
-          }
-        }).value();
-      console.log('changed movie: ', returnMovie);
-      this.currentMovies = returnMovie;
+      this.currentMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }
 }
