@@ -35,14 +35,13 @@ export class CurrentMoviesComponent implements OnInit {
             title: movie.title,
             description: movie.overview,
             image: {
-              url: this.imgUrls[0] + movie.poster_path,
+              url: this.imgUrls[(this.imgUrls.length - 1)] + movie.poster_path,
               poster_ref: movie.poster_path,
               description: `movie poster for ${movie.title}`
             },
             public_rating: movie.vote_average
           }
-        })
-        .value();
+        }).value();
       console.log('changed movie: ', returnMovie);
       this.currentMovies = returnMovie;
     });
