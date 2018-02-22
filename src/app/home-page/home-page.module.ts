@@ -10,7 +10,7 @@ import {CoreModule} from '../core/core.module';
 import {MovieService} from '../Services/movies.service';
 import {HttpClientModule} from '@angular/common/http';
 import { MovieComponent } from './movie/movie.component';
-import { ImgService } from './img.service';
+import { ImgService } from './services/img.service';
 
 @NgModule({
   imports: [

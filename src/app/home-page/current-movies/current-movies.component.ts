@@ -4,7 +4,7 @@ import {Movie} from '../../Services/movies.interface';
 import { MovieObj } from '../movieObj.interface';
 import * as _ from 'lodash';
 import { Configuration } from '../../Services/configuration.interface';
-import { ImgService } from '../../img.service';
+import { ImgService } from '../services/img.service';
 
 @Component({
   selector: 'app-current-movies',
