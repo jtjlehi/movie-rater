@@ -5,9 +5,8 @@ body{
   background-color: lightgray;
 }
 .upcomingMovies{
-  border: solid 1px;
-  border-radius: 25px;
-  margin: 10px 1px 10px 1px;
+  display:flex;
+
 }
 .friendsCard{
   border: solid 1px;
@@ -26,7 +25,7 @@ body{
   width:30%;
   margin:10px 1px 10px 1px;
   flex-direction: row;
-  flex-wrap: wrap;
+
 }
 .wish{
   border: solid 1px;

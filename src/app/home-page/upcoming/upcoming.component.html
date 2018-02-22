@@ -1,6 +1,8 @@
+<div class="needsFlex">
 <mat-card>
   <mat-card-title>Upcoming Movies</mat-card-title>
-  <app-movie *ngFor="let movie of upcomingMovies" 
+  <app-movie class="upcomingMovies"*ngFor="let movie of upcomingMovies"
     [movie]="movie">
   </app-movie>
 </mat-card>
+</div>
