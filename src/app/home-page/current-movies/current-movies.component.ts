@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from '../../Services/movies.service';
-import {Movie} from '../../Services/movies.data';
+import {Movie} from '../../Services/movies.interface';
+import { MovieObj } from '../movieObj.interface';
+import * as _ from 'lodash';
+import { Configuration } from '../../Services/configuration.interface';
+import { ImgService } from '../../img.service';
 
 @Component({
   selector: 'app-current-movies',
@@ -8,14 +12,24 @@ import {Movie} from '../../Services/movies.data';
   styleUrls: ['./current-movies.component.scss']
 })
 export class CurrentMoviesComponent implements OnInit {
-  currentMovie: string;
-  Movies;
-  original_title;
 
-  constructor(private movieService: MovieService) {
+  imgUrls: string[];
+  currentMovies: MovieObj[];
+
+  constructor(
+    private movieService: MovieService,
+    private imgService: ImgService
+  ) {
   }
+
   ngOnInit() {
-    this.movieService.getCurrentMovies().subscribe((movies: Movie[]) => {
+    this.imgService.getImgUrls().then(urls => {
+      console.log('imgUrls: ', urls);
+      this.imgUrls = urls;
+    });
+    this.movieService.getCurrentMovies().subscribe(movies => {
+      console.log('current movies: ', movies);
+      this.currentMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }
 }
