@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-import { Configuration } from '../Services/configuration.interface';
+import { Configuration } from '../../Services/configuration.interface';
 
 @Injectable()
 export class ImgService {
@@ -25,7 +25,6 @@ export class ImgService {
       this.imgUrls = confData.images.poster_sizes.map(value => {
         return `${confData.images.base_url}${value}`;
       });
-      console.log(this.imgUrls);
       return this.imgUrls;
     });
   }

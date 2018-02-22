@@ -24,11 +24,9 @@ export class CurrentMoviesComponent implements OnInit {
 
   ngOnInit() {
     this.imgService.getImgUrls().then(urls => {
-      console.log('imgUrls: ', urls);
       this.imgUrls = urls;
     });
     this.movieService.getCurrentMovies().subscribe(movies => {
-      console.log('current movies: ', movies);
       this.currentMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }

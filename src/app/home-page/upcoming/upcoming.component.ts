@@ -23,7 +23,6 @@ export class UpcomingComponent implements OnInit {
       this.imgUrls = urls;
     });
     this.movieService.getUpcomingMovies().subscribe(movies => {
-      console.log(movies);
       this.upcomingMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }
