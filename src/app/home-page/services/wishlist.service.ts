@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
+
 import { MovieObj } from '../movieObj.interface';
+import { AuthService } from '../../core/auth.service';
 
 @Injectable()
 export class WishlistService {
 
   userId: string;
 
-  constructor() { }
+  constructor(
+    authService: AuthService
+  ) { }
 
   // adds the item to firebase
   public addMovie(movie: MovieObj) {
