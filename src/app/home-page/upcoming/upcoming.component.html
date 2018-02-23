@@ -1,8 +1,9 @@
-<div class="needsFlex">
-<mat-card>
+<mat-card class="needsFlex">
   <mat-card-title>Upcoming Movies</mat-card-title>
-  <app-movie class="upcomingMovies"*ngFor="let movie of upcomingMovies"
-    [movie]="movie">
-  </app-movie>
+  <mat-card-content class="flex scroll">
+    <app-movie *ngFor="let movie of upcomingMovies"
+               [movie]="movie"
+               [width]="'250px'">
+    </app-movie>
+  </mat-card-content>
 </mat-card>
-</div>

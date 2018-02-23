@@ -9,6 +9,7 @@ import { MovieObj } from '../movieObj.interface';
 export class MovieComponent implements OnInit {
 
   @Input() movie: MovieObj;
+  @Input() width: string;
 
   constructor() { }
 

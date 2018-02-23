@@ -4,10 +4,6 @@ body{
   border-radius: 30px;
   background-color: lightgray;
 }
-.upcomingMovies{
-  display:flex;
-
-}
 .friendsCard{
   border: solid 1px;
   border-radius: 50px;
@@ -45,7 +41,7 @@ body{
   display: flex;
 }
 .flex{
-  display:flex;
+  display:inline;
 }
 .images{
   width:1420px;
@@ -69,7 +65,4 @@ body{
 .movieImage{
   height: 400px;
   width: 280px;
-}
-.matCard{
-  width: 27.5%;
 }
