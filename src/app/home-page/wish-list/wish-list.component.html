@@ -1,6 +1,7 @@
 <mat-card>
   <mat-card-title>Wishlist</mat-card-title>
   <app-movie *ngFor="let movie of wishlist" 
-    [movie]="movie">
+    [movie]="movie"
+    [inWishlist]="true" >
   </app-movie>
 </mat-card>

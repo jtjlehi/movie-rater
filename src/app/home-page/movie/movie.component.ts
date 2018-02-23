@@ -10,6 +10,7 @@ import { WishlistService } from '../services/wishlist.service';
 export class MovieComponent implements OnInit {
 
   @Input() movie: MovieObj;
+  @Input() inWishlist: boolean;
 
   constructor(
     private wishlistService: WishlistService

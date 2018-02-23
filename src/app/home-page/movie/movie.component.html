@@ -9,12 +9,12 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="inWishList"
+    <button *ngIf="inWishlist"
       mat-raised-button 
       color="accent" >
       Remove From Wish List
     </button>
-    <button *ngIf="!inWishList"
+    <button *ngIf="!inWishlist"
       mat-raised-button 
       (click)="addMovieToWishlist()"
       color="accent" >
