@@ -16,6 +16,7 @@
     </button>
     <button *ngIf="!inWishList"
       mat-raised-button 
+      (click)="addMovieToWishlist()"
       color="accent" >
      Add To Wish List
     </button>
