@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACA,SAAU;EACR,WAAW,EAAE,MAAM;EACnB,QAAQ,EAAE,MAAM;EAChB,aAAa,EAAE,QAAQ;;AAGzB,aAAc;EACZ,MAAM,EAAE,GAAG;;AAEb,YAAY;EACV,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,MAAM",
+"sources": ["movie.component.scss"],
 "names": [],
 "file": "movie.component.css"
 }

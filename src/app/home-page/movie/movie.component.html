@@ -1,9 +1,9 @@
-<mat-card class="noBlock" [style.width]="width">
-  <mat-card-title>{{movie.title}}</mat-card-title>
+<mat-card class="noBlock small-margin" [style.width]="width">
+  <mat-card-title class="truncate">{{movie.title}}</mat-card-title>
   <img mat-card-image
     [src]="movie.image.url"
     [alt]="movie.image.description" >
-  <mat-card-content>
+  <mat-card-content class="description">
     <p>
       {{movie.description}}
     </p>
