@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from '../services/wishlist.service';
+import { MovieObj } from '../movieObj.interface';
 
 @Component({
   selector: 'app-wish-list',
@@ -8,13 +9,15 @@ import { WishlistService } from '../services/wishlist.service';
 })
 export class WishListComponent implements OnInit {
 
+  wishlist: MovieObj[];
+
   constructor(
     private wishlistService: WishlistService
   ) { }
 
   ngOnInit() {
     this.wishlistService.displayWishList().subscribe(wishlist => {
-      console.log(wishlist);
+      this.wishlist = wishlist;
     });
   }
 
