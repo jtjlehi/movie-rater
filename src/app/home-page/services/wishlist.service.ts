@@ -45,7 +45,6 @@ export class WishlistService {
   // adds the item to firebase
   public addMovie(movie: MovieObj): Promise<string> {
     return this.queryWishlistCollection(movie.title).then(movieExists => {
-      console.log(movieExists);
       if (this.isUser && !movieExists) {
         this.userDoc.collection('wishlist').add(movie);
         return 'movie added';
