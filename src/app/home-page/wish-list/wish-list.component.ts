@@ -13,6 +13,9 @@ export class WishListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.wishlistService.displayWishList().subscribe(wishlist => {
+      console.log(wishlist);
+    });
   }
 
 }
