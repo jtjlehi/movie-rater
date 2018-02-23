@@ -9,21 +9,25 @@ import {
   AngularFirestore,
   AngularFirestoreCollection 
 } from 'angularfire2/firestore';
-import { Observable } from '@firebase/util';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { Query, QuerySnapshot } from '@firebase/firestore-types';
 
 @Injectable()
 export class WishlistService {
 
   uid: string = '';
   private userDoc: AngularFirestoreDocument<User> = null;
-  wishlistObservable: Subject<MovieObj[]>
+  wishlistObservable: Subject<MovieObj[]>;
+  private query: Query;
 
   constructor(
     private authService: AuthService,
     private afs: AngularFirestore
   ) {
+    // sets the wishlistObservable at the very beginning 
     this.wishlistObservable = new Subject();
+    // subscribes to the users data as defined by the auth service
     authService.userObservable.subscribe(user => {
       if (!this.isUser) {
         this.uid = user.uid;
@@ -39,14 +43,28 @@ export class WishlistService {
   }
 
   // adds the item to firebase
-  public addMovie(movie: MovieObj) {
-    if (this.isUser) {
+  public addMovie(movie: MovieObj): Promise<string> {
+    return this.queryWishlistCollection(movie.title).then(movieExists => {
+      console.log(movieExists);
+      if (this.isUser && !movieExists) {
+        this.userDoc.collection('wishlist').add(movie);
+        return 'movie added';
+      } else if (!this.isUser) {
+        throw new Error('not a user');
+      } else {
+        throw new Error('movie exists');
+      }
+    });
+  }
 
-    } else {
-
-    }
-    throw new Error('WishlistService.addMovie() not implemented');
-    // TODO: check if item already exists in firebase
+  public queryWishlistCollection(title: string): Promise<boolean> {
+    const queriedWishlist = this.userDoc.collection('wishlist', ref => {
+      this.query = ref.where('title', '==', title);
+      return ref.where('title', '==', title);
+    });
+    return this.query.get().then(querySnapshot => {
+      return !querySnapshot.empty;
+    });
   }
 
   public removeMovie(movieId) {
