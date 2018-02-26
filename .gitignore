@@ -20,11 +20,13 @@
 .vscode/settings.json
 
 # IDE - VSCode
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+*/**/*.css*
 
 # misc
 /.sass-cache
@@ -42,4 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-.gitignore
