@@ -3,16 +3,14 @@
   border-radius: 25px;
   margin: 10px 1px 10px 1px;
 }
-.card{
-  display:flex;
-}
 .needsFlex{
   display: flex;
 }
-.flex{
-  display:flex;
+.scroll {
+  display: flex;
+  overflow: scroll;
 }
-.images{
+/*.images{
   width:1420px;
   height:400px;
 }
@@ -23,7 +21,4 @@
 .matCard{
   width: 27.5%;
 }
-.scroll {
-  display: flex;
-  overflow: scroll;
-}
+*/
