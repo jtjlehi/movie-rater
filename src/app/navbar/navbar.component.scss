@@ -27,3 +27,21 @@ img{
   margin-left: -570px;
   background: url('../../assets/img/movies-desktop.png') no-repeat;
 }
+.spaceBetween{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.phoneHidden{
+  display: none;
+}
+@media only screen and (min-width: 600px) {
+  .phoneHidden{
+    display: block;
+  }
+  .spaceBetween{
+    width: auto;
+  }
+};
+
+
