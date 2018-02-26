@@ -69,11 +69,10 @@ export class WishlistService {
 
   public removeMovie(movieId) {
     if (this.isUser) {
-
+      this.userDoc.collection('wishlist').doc(movieId).delete();
     } else {
-
+      throw new Error('not signed in.');
     }
-    throw new Error('WishlistService.removeMovie() not implemented');
   }
 
   // displays the users wishlist
