@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Review } from './reivew.interface';
+import { Review } from './review.interface';
 
 @Injectable()
 export class ReviewsService {
