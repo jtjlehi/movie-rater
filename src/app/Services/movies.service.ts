@@ -17,6 +17,7 @@ export class MovieService {
   private movieUrl: string = 'https://api.themoviedb.org/3/movie/';
   private apiKey: string = 'f1dc689823def4f561ce96b21153f793';
   private Movies: string;
+  private imageUrl:string = 'https://image.tmdb.org/t/p/w500';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -59,6 +60,10 @@ export class MovieService {
         }
       }).value();
     return returnMovies;
+  }
+
+  getFullUrl(url) {
+    return this.imageUrl + url;
   }
 
   handleError(error) {

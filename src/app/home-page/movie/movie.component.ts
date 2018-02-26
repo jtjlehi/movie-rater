@@ -11,6 +11,7 @@ export class MovieComponent implements OnInit {
 
   @Input() movie: MovieObj;
   @Input() inWishlist: boolean;
+  @Input() width: string;
 
   constructor(
     private wishlistService: WishlistService

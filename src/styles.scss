@@ -4,11 +4,6 @@ body{
   border-radius: 30px;
   background-color: lightgray;
 }
-.upcomingMovies{
-  border: solid 1px;
-  border-radius: 25px;
-  margin: 10px 1px 10px 1px;
-}
 .friendsCard{
   border: solid 1px;
   border-radius: 50px;
@@ -26,7 +21,7 @@ body{
   width:30%;
   margin:10px 1px 10px 1px;
   flex-direction: row;
-  flex-wrap: wrap;
+
 }
 .wish{
   border: solid 1px;
@@ -46,7 +41,7 @@ body{
   display: flex;
 }
 .flex{
-  display:flex;
+  display:inline;
 }
 .images{
   width:1420px;
@@ -71,6 +66,6 @@ body{
   height: 400px;
   width: 280px;
 }
-.matCard{
-  width: 27.5%;
+.mat-card-title{
+  text-align: center;
 }
