@@ -4,10 +4,10 @@ import { MovieObj } from '../movieObj.interface';
 import { AuthService } from '../../core/auth.service';
 import { User } from '../../core/interfaces/user.interface';
 
-import { 
+import {
   AngularFirestoreDocument,
   AngularFirestore,
-  AngularFirestoreCollection 
+  AngularFirestoreCollection
 } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -25,7 +25,7 @@ export class WishlistService {
     private authService: AuthService,
     private afs: AngularFirestore
   ) {
-    // sets the wishlistObservable at the very beginning 
+    // sets the wishlistObservable at the very beginning
     this.wishlistObservable = new Subject();
     // subscribes to the users data as defined by the auth service
     authService.userObservable.subscribe(user => {
@@ -70,7 +70,7 @@ export class WishlistService {
     if (this.isUser) {
 
     } else {
-      
+
     }
     throw new Error('WishlistService.removeMovie() not implemented');
   }
