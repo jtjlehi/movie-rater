@@ -4,7 +4,7 @@ import {Movie} from '../../Services/movies.interface';
 import { MovieObj } from '../movieObj.interface';
 import * as _ from 'lodash';
 import { Configuration } from '../../Services/configuration.interface';
-import { ImgService } from '../../img.service';
+import { ImgService } from '../services/img.service';
 
 @Component({
   selector: 'app-current-movies',
@@ -24,11 +24,9 @@ export class CurrentMoviesComponent implements OnInit {
 
   ngOnInit() {
     this.imgService.getImgUrls().then(urls => {
-      console.log('imgUrls: ', urls);
       this.imgUrls = urls;
     });
     this.movieService.getCurrentMovies().subscribe(movies => {
-      console.log('current movies: ', movies);
       this.currentMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }

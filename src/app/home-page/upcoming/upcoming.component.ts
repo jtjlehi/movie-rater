@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from '../../Services/movies.service';
-import { ImgService } from '../../img.service';
+import { ImgService } from '../services/img.service';
 import { MovieObj } from '../movieObj.interface';
 
 @Component({
@@ -23,7 +23,6 @@ export class UpcomingComponent implements OnInit {
       this.imgUrls = urls;
     });
     this.movieService.getUpcomingMovies().subscribe(movies => {
-      console.log(movies);
       this.upcomingMovies = this.movieService.mapMovie(movies, this.imgUrls);
     });
   }

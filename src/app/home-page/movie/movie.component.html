@@ -9,13 +9,15 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="inWishList"
+    <!-- the remove from wishlist isn't ready this sprint I am commenting it out until next sprint -->
+    <!-- <button *ngIf="inWishlist"
       mat-raised-button 
       color="accent" >
       Remove From Wish List
-    </button>
-    <button *ngIf="!inWishList"
+    </button> -->
+    <button *ngIf="!inWishlist"
       mat-raised-button 
+      (click)="addMovieToWishlist()"
       color="accent" >
      Add To Wish List
     </button>
