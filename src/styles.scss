@@ -1,8 +1,9 @@
 @import './theme.scss';
 body {
   margin: 0 0 0 0;
+  overflow-x: hidden;
 }
-.needsFlex{
+.flex{
   display: flex;
 }
 /* For mobile phones: */
@@ -38,4 +39,10 @@ body {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+}
+.leftDiv{
+  width: 68%;
+}
+.rightDiv{
+  width: 32%;
 }

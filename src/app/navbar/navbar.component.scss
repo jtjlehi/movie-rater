@@ -19,7 +19,7 @@ img{
 */
 .wrap {
   height: 357px;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 .image {
@@ -43,5 +43,13 @@ img{
     width: auto;
   }
 };
+.sticky{
+  position: fixed;
+  top:0;
+  z-index: 1;
+  background-color: black;
+;
+}
+
 
 
