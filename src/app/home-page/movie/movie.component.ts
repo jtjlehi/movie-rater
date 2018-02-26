@@ -9,10 +9,15 @@ import { MovieObj } from '../movieObj.interface';
 export class MovieComponent implements OnInit {
 
   @Input() movie: MovieObj;
+  @Input() inWishList: boolean;
+  @Input() width: string;
 
-  constructor() { }
+  constructor(private wishListService: WishListService) { }
 
   ngOnInit() {
   }
 
+  addMovieToWishList(){
+    this.wishListService.addMovie(this.movie);
+  }
 }

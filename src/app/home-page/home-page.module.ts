@@ -11,6 +11,7 @@ import {MovieService} from '../Services/movies.service';
 import {HttpClientModule} from '@angular/common/http';
 import { MovieComponent } from './movie/movie.component';
 import { ImgService } from '../img.service';
+import { WishListService } from './services/wishlist.service';
 
 @NgModule({
   imports: [
