@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB;EAClB,QAAQ,EAAE,MAAM;EAChB,MAAM,EAAE,MAAM",
+"sources": ["current-movies.component.scss"],
+"names": [],
+"file": "current-movies.component.css"
+}
