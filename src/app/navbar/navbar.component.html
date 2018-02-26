@@ -1,4 +1,4 @@
-<mat-toolbar color='primary' >
+<mat-toolbar color='primary'  class="sticky" >
   <mat-toolbar-row>
     <span>Movie Rater Application</span>
     <div>
@@ -6,12 +6,12 @@
         routerLink='/home' >Home Page</button>
       <button mat-button *ngIf='!loggedIn'
         (click)="openLogin()" >Login</button>
-      <button mat-button *ngIf='loggedIn' 
+      <button mat-button *ngIf='loggedIn'
         [matMenuTriggerFor]='userMenu' >
         {{ user.name }}
       </button>
     </div>
-  </mat-toolbar-row>  
+  </mat-toolbar-row>
 </mat-toolbar>
 <mat-menu #userMenu='matMenu' >
   <!-- <button mat-menu-item>Update User Info</button> -->

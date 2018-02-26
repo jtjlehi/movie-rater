@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAQ;EACN,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,MAAM",
+"sources": ["upcoming.component.scss"],
+"names": [],
+"file": "upcoming.component.css"
+}
