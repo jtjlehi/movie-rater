@@ -6,12 +6,12 @@ import { FriendsComponent } from './friends/friends.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CurrentMoviesComponent } from './current-movies/current-movies.component';
-import {CoreModule} from '../core/core.module';
-import {MovieService} from '../Services/movies.service';
-import {HttpClientModule} from '@angular/common/http';
+import { CoreModule} from '../core/core.module';
+import { MovieService} from '../Services/movies.service';
+import { HttpClientModule} from '@angular/common/http';
 import { MovieComponent } from './movie/movie.component';
-import { ImgService } from '../img.service';
-import { WishListService } from './services/wishlist.service';
+import { ImgService } from './services/img.service';
+import { WishlistService } from './services/wishlist.service';
 
 @NgModule({
   imports: [
@@ -29,7 +29,8 @@ import { WishListService } from './services/wishlist.service';
   ],
   providers: [
     MovieService,
-    ImgService
+    ImgService,
+    WishlistService
   ],
   exports: [
     CurrentMoviesComponent,

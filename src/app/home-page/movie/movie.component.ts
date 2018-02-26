@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MovieObj } from '../movieObj.interface';
+import { WishlistService } from '../services/wishlist.service';
 
 @Component({
   selector: 'app-movie',
@@ -9,15 +10,18 @@ import { MovieObj } from '../movieObj.interface';
 export class MovieComponent implements OnInit {
 
   @Input() movie: MovieObj;
-  @Input() inWishList: boolean;
+  @Input() inWishlist: boolean;
   @Input() width: string;
 
-  constructor(private wishListService: WishListService) { }
+  constructor(
+    private wishlistService: WishlistService
+  ) { }
 
   ngOnInit() {
   }
 
-  addMovieToWishList(){
-    this.wishListService.addMovie(this.movie);
+  addMovieToWishlist() {
+    this.wishlistService.addMovie(this.movie);
   }
+
 }
