@@ -1,1 +1,7 @@
 @import './theme.scss';
+body {
+  margin: 0 0 0 0;
+}
+.needsFlex{
+  display: flex;
+}
