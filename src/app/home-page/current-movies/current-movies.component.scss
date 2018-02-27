@@ -27,3 +27,13 @@
   display: flex;
   overflow: scroll;
 }
+mat-card-title{
+  text-align: center;
+  color: whitesmoke;
+  background-color: black;
+  letter-spacing: 30px;
+  font-weight: 300;
+  padding: 3px;
+  display: flex;
+  justify-content: space-around;
+}
