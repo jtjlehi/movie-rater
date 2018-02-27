@@ -3,7 +3,7 @@
   <img mat-card-image
     [src]="movie.image.url"
     [alt]="movie.image.description" >
-  <mat-card-content class="description">
+  <mat-card-content *ngIf='!inWishlist' class="description">
     <p>
       {{movie.description}}
     </p>

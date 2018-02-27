@@ -22,7 +22,6 @@ import { FriendCardComponent } from './home-page/friend-card/friend-card.compone
     AppComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    FriendCardComponent,
   ],
   imports: [
     LoginModule,
