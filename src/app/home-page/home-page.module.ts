@@ -12,6 +12,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { MovieComponent } from './movie/movie.component';
 import { ImgService } from './services/img.service';
 import { WishlistService } from './services/wishlist.service';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 @NgModule({
   imports: [
