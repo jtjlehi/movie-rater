@@ -25,7 +25,26 @@ export class ReviewsService {
   }
 
   public addReview(review: Review): void {
-    this.afs.collection<Review>('reviews').add(review);
+    this.afs.collection<Review>('reviews').doc<Review>(review.reviewId).set(review);
+  }
+
+  public createReview(
+    reviewData: {
+      movie_name: string,
+      movie_id: string,
+      rating: number,
+      review: string
+    }
+  ): void {
+    const review: Review = {
+      movieName: reviewData.movie_name,
+      movieId: reviewData.movie_id,
+      rating: reviewData.rating,
+      review_text: reviewData.review,
+      reviewId: this.afs.createId(),
+      userId: this.uid
+    };
+    this.addReview(review);
   }
 
   // this sets the userDoc property
