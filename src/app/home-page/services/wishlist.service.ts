@@ -46,7 +46,8 @@ export class WishlistService {
   public addMovie(movie: MovieObj): Promise<string> {
     return this.queryWishlistCollection(movie.title).then(movieExists => {
       if (this.isUser && !movieExists) {
-        this.userDoc.collection('wishlist').add(movie);
+        movie.fireId = this.afs.createId();
+        this.userDoc.collection('wishlist').doc(movie.fireId).set(movie);
         return 'movie added';
       } else if (!this.isUser) {
         throw new Error('not a user');
@@ -68,11 +69,10 @@ export class WishlistService {
 
   public removeMovie(movieId) {
     if (this.isUser) {
-
+      this.userDoc.collection('wishlist').doc(movieId).delete();
     } else {
-
+      throw new Error('not signed in.');
     }
-    throw new Error('WishlistService.removeMovie() not implemented');
   }
 
   // displays the users wishlist

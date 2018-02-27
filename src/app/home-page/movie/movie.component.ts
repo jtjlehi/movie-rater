@@ -23,5 +23,8 @@ export class MovieComponent implements OnInit {
   addMovieToWishlist() {
     this.wishlistService.addMovie(this.movie);
   }
+  removeMovieFromWishlist() {
+    this.wishlistService.removeMovie(this.movie.fireId);
+  }
 
 }
