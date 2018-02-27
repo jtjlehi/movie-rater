@@ -42,6 +42,9 @@ import { ReviewComponent } from './review/review.component';
     FriendsComponent,
     WishListComponent,
     UpcomingComponent
+  ],
+  entryComponents: [
+    ReviewComponent
   ]
 })
 export class HomePageModule { }
