@@ -5,12 +5,14 @@
   <mat-form-field>
     <input matInput
       type="number"
-      placeholder="Rating" >
+      placeholder="Rating"
+      [formControl]="rating" >
   </mat-form-field>
   <mat-form-field>
     <input matInput
       type="text"
-      placeholder="Review" >
+      placeholder="Review"
+      [formControl]="review" >
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>

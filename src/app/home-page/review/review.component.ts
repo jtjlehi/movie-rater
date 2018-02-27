@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ReviewsService } from '../services/reviews/reviews.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-review',
@@ -8,6 +9,9 @@ import { ReviewsService } from '../services/reviews/reviews.service';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
+
+  private review = new FormControl();
+  private rating = new FormControl();
 
   constructor(
     private dialogRef: MatDialogRef<ReviewComponent>,
