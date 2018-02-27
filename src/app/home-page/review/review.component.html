@@ -1,3 +1,25 @@
-<p>
-  review works!
-</p>
+<h1 mat-dialog-title>
+  Write a review
+</h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput
+      type="number"
+      placeholder="Rating" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+      type="text"
+      placeholder="Review" >
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button
+    color="accent" >
+    CANCEL
+  </button>
+  <button mat-raised-button
+    color="accent" >
+    SUBMIT
+  </button>
+</mat-dialog-actions>
