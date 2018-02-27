@@ -1,7 +1,7 @@
-<mat-toolbar color='primary'  class="sticky" >
+<div><mat-toolbar color='primary' class="sticky">
   <mat-toolbar-row>
-    <span>Movie Rater Application</span>
-    <div>
+    <span class="phoneHidden">Movie Rater Application</span>
+    <div class="spaceBetween">
       <button mat-button
         routerLink='/home' >Home Page</button>
       <button mat-button *ngIf='!loggedIn'
@@ -19,4 +19,7 @@
   <button mat-menu-item>Feedback</button>
   <button mat-menu-item>Help</button>
 </mat-menu>
+    <div class="backImage image wrap needsFlex flexSpecs">
+    </div>
+</div>
 <!-- If the User cannot do it, or won't be able to do it by the end of the sprint, don't tell them they can!!!!!!! -->

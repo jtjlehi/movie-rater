@@ -1,6 +1,9 @@
-<mat-card class="CurrentMoviesScroll">
+<mat-card class="needsFlex">
   <mat-card-title>Current Movies</mat-card-title>
-  <app-movie *ngFor="let movie of currentMovies"
-    [movie]="movie">
-  </app-movie>
+  <mat-card-content class="flex scroll">
+    <app-movie  *ngFor="let movie of currentMovies"
+                [movie]="movie"
+                [width]="'250px'">
+    </app-movie>
+  </mat-card-content>
 </mat-card>

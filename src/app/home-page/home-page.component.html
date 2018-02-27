@@ -1,7 +1,17 @@
-<div class="card">
-  <div class="leftDiv"><app-wish-list></app-wish-list>
-    <app-upcoming></app-upcoming></div>
-  <div class="rightDiv"><app-current-movies></app-current-movies></div>
+<div class="homePage">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Friends/Wishlist
+      </ng-template>
+
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Upcoming/Current Movies
+      </ng-template>
+      <app-upcoming></app-upcoming>
+      <app-current-movies></app-current-movies>
+    </mat-tab>
+  </mat-tab-group>
 </div>
-
-
