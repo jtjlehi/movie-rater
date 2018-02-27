@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ReviewsService } from '../services/reviews/reviews.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { NumberInputValidator } from './rating.validation';
 
 @Component({
   selector: 'app-review',
@@ -11,7 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ReviewComponent implements OnInit {
 
   private review = new FormControl();
-  private rating = new FormControl();
+  private rating = new FormControl('', NumberInputValidator.checkLimit(0, 10));
 
   constructor(
     private dialogRef: MatDialogRef<ReviewComponent>,
@@ -20,6 +21,10 @@ export class ReviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  private get valid(): boolean {
+    return this.review.valid && this.rating.valid;
   }
 
 }
