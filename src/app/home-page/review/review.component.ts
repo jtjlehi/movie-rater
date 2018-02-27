@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-review',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialogRef: MatDialogRef<ReviewComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: {movie_name: string, movie_id: string}
+  ) { }
 
   ngOnInit() {
   }
