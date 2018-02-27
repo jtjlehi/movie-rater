@@ -25,7 +25,7 @@ export class ReviewsService {
   }
 
   public addReview(review: Review): void {
-    throw new Error('ReviewService.addReview() not implemented');
+    this.afs.collection<Review>('reviews').add(review);
   }
 
   // this sets the userDoc property
