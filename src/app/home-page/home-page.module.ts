@@ -14,6 +14,7 @@ import { ImgService } from './services/img.service';
 import { WishlistService } from './services/wishlist.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import {FriendCardComponent} from "./friend-card/friend-card.component";
+import { FirebaseService } from './movie/firebase.service';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {FriendCardComponent} from "./friend-card/friend-card.component";
   providers: [
     MovieService,
     ImgService,
-    WishlistService
+    WishlistService,
+    FirebaseService
   ],
   exports: [
     CurrentMoviesComponent,
