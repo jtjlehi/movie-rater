@@ -27,4 +27,13 @@ export class ReviewComponent implements OnInit {
     return this.review.valid && this.rating.valid;
   }
 
+  private submitReview() {
+    this.reviewService.createReview({
+      movie_name: this.data.movie_name,
+      movie_id: this.data.movie_id,
+      rating: this.rating.value,
+      review: this.review.value
+    });
+  }
+
 }

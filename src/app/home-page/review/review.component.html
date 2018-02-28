@@ -23,7 +23,8 @@
   <button mat-raised-button
     required
     color="accent"
-    [disabled]="!valid" >
+    [disabled]="!valid"
+    (click)="submitReview()" >
     SUBMIT
   </button>
 </mat-dialog-actions>
