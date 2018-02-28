@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ReviewsService } from '../services/reviews/reviews.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NumberInputValidator } from './rating.validation';
 
 @Component({
@@ -11,8 +11,8 @@ import { NumberInputValidator } from './rating.validation';
 })
 export class ReviewComponent implements OnInit {
 
-  private review = new FormControl();
-  private rating = new FormControl('', NumberInputValidator.checkLimit(0, 10));
+  private review = new FormControl('', Validators.required);
+  private rating = new FormControl('', [NumberInputValidator.checkLimit(0, 10), Validators.required]);
 
   constructor(
     private dialogRef: MatDialogRef<ReviewComponent>,
