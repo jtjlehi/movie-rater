@@ -4,15 +4,12 @@
       <ng-template mat-tab-label>
         <a routerLink="/profile" routerLinkActive="active">Friends/Wishlist</a>
       </ng-template>
-      <app-friend-card></app-friend-card>
-      <app-wish-list></app-wish-list>
+      <router-outlet></router-outlet>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         <a routerLink="/movies" routerLinkActive="active">Upcoming/Current Movies</a>
       </ng-template>
-      <app-upcoming></app-upcoming>
-      <app-current-movies></app-current-movies>
     </mat-tab>
   </mat-tab-group>
 </div>

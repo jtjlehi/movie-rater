@@ -9,6 +9,8 @@ import {CurrentMoviesComponent} from './home-page/current-movies/current-movies.
 
 import { AuthService } from './core/auth.service';
 import { NewUserComponent } from './login/new-user/new-user.component';
+import {MoviesTabComponent} from "./home-page/movies-tab/movies-tab.component";
+import {ProfileTabComponent} from "./home-page/profile-tab/profile-tab.component";
 
 const routes: Routes = [
   {
@@ -38,9 +40,11 @@ const routes: Routes = [
   },
   {
     path: 'movies',
+    component: MoviesTabComponent,
   },
   {
     path: 'profile',
+    component: ProfileTabComponent,
   },
 ];
 
