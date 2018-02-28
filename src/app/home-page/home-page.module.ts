@@ -13,7 +13,7 @@ import { MovieComponent } from './movie/movie.component';
 import { ImgService } from './services/img.service';
 import { WishlistService } from './services/wishlist.service';
 import { MatTabsModule } from '@angular/material/tabs';
-import {FriendCardComponent} from "./friend-card/friend-card.component";
+import {FriendCardComponent} from './friend-card/friend-card.component';
 import { MoviesTabComponent } from './movies-tab/movies-tab.component';
 import { ProfileTabComponent } from './profile-tab/profile-tab.component';
 
@@ -22,7 +22,7 @@ import { ProfileTabComponent } from './profile-tab/profile-tab.component';
   imports: [
     CommonModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [
     CurrentMoviesComponent,
