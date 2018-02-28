@@ -35,7 +35,13 @@ const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
-  }
+  },
+  {
+    path: 'movies',
+  },
+  {
+    path: 'profile',
+  },
 ];
 
 @NgModule({
