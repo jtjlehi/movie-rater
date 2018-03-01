@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  /*navLinks: object[] = [
+    { 'label': 'profile',
+      'path': 'profile'
+    },
+    { 'label': 'movies',
+      'path': 'movies'
+    }
+  ];
+*/
   constructor() { }
 
   ngOnInit() {
