@@ -16,7 +16,6 @@ import { environment } from '../environments/environment';
 import { LoginModule } from './login/login.module';
 import { FriendCardComponent } from './home-page/friend-card/friend-card.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

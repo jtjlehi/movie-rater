@@ -4,9 +4,7 @@
     [src]="movie.image.url"
     [alt]="movie.image.description" >
   <mat-card-content *ngIf='!inWishlist' class="description">
-    <p>
-      {{movie.description}}
-    </p>
+    <p>{{movie.description}}</p>
   </mat-card-content>
   <mat-card-actions>
     <!-- the remove from wishlist isn't ready this sprint I am commenting it out until next sprint -->

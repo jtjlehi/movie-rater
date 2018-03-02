@@ -22,10 +22,17 @@ img{
   overflow-x: hidden;
   position: relative;
 }
-.image {
-  left: 50%;
-  margin-left: -570px;
-  background: url('../../assets/img/movies-desktop.png') no-repeat;
+  .image {
+    left: 50%;
+    margin-left: -570px;
+    background: url('../../assets/img/movies-desktop.png') no-repeat;
+  }
+@media only screen and (min-width: 1140px){
+  .image{
+    left: 0;
+    margin-left: 0;
+    background-size: cover;
+  }
 }
 .spaceBetween{
   display: flex;
