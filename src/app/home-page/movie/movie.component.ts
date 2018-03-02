@@ -8,7 +8,6 @@ import { WishlistService } from '../services/wishlist.service';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-
   @Input() movie: MovieObj;
   @Input() inWishlist: boolean;
   @Input() width: string;
