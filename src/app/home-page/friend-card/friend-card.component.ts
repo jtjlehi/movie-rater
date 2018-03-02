@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./friend-card.component.scss']
 })
 export class FriendCardComponent implements OnInit {
-  profileImg: string = '';
-
   constructor() { }
 
   ngOnInit() {
-    this.profileImg = '';
   }
 }
