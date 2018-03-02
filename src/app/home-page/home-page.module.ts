@@ -17,7 +17,6 @@ import {FriendCardComponent} from './friend-card/friend-card.component';
 import { MoviesTabComponent } from './movies-tab/movies-tab.component';
 import { ProfileTabComponent } from './profile-tab/profile-tab.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
