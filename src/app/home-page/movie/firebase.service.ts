@@ -1,32 +1,57 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { MovieObj } from '../movieObj.interface';
+import 'rxjs/add/operator/toPromise';
 import * as _ from 'lodash';
 
 @Injectable()
 export class FirebaseService {
 
-  private localMovies: MovieObj[] = [];
-  private storedMovies: MovieObj[];
+  public localMovies: MovieObj[] = [];
 
   constructor(
     private afs: AngularFirestore
   ) {
-    afs.collection<MovieObj>('movies').valueChanges().subscribe(storedMovies => {
-      this.storedMovies = storedMovies;
+  }
+
+  public addMovies(movie: MovieObj) {
+    this.addLocalMovie(movie);
+    this.addNewMovies();
+  }
+
+  private addNewMovies(): void {
+    this.getStoredMovies()
+    .then(newMovies => {
+      console.log('new movies');
+      newMovies.forEach(movie => {
+        this.afs.collection<MovieObj>('movies').add(movie);
+      });
     });
   }
 
-  public addMovie(movie: MovieObj) {
-    this.afs.collection<MovieObj>('movies').doc<MovieObj>(movie.fireId).set(movie);
+  private getNewMovies(): Promise<MovieObj[]> {
+    console.log('get newMovies fired');
+    return this.getStoredMovies()
+    .then(storedMovies => {
+      console.log('stored movies: ', storedMovies);
+      return _.differenceBy(this.localMovies, storedMovies, 'title');
+    });
   }
 
-  private get newMovies(): MovieObj[] {
-    return _.differenceBy(this.localMovies, this.storedMovies, 'fireId');
+  private getStoredMovies(): Promise<MovieObj[]> {
+    return this.afs.collection<MovieObj>('movies').valueChanges().toPromise()
+    .then(storedMovies => {
+      console.log('storedMovies: ', storedMovies);
+      return _.differenceBy(this.localMovies, storedMovies, 'title');
+    });
   }
 
-  public addLocalMovies(addedMovies: MovieObj[]) {
-    this.localMovies = _.concat(this.localMovies, addedMovies);
+  public addLocalMovie(addedMovie: MovieObj) {
+    this.localMovies = _
+      .chain(this.localMovies)
+      .concat(addedMovie)
+      .uniqBy('title')
+      .value();
   }
 
 }
