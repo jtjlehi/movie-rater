@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MovieObj } from '../movieObj.interface';
 import { WishlistService } from '../services/wishlist.service';
+import { FirebaseService } from './firebase.service';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-movie',
@@ -14,10 +16,14 @@ export class MovieComponent implements OnInit {
   @Input() width: string;
 
   constructor(
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private firebaseService: FirebaseService
   ) { }
 
   ngOnInit() {
+    console.log(this.movie);
+    this.firebaseService.addMovies(this.movie);
+    console.log('local movies: ', this.firebaseService.localMovies);
   }
 
   addMovieToWishlist() {
