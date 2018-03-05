@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -7,20 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  activeLinkIndex: number = -1;
   navLinks: Array<{
     label: string;
-    path: string;
+    link: string;
+    index: number;
   }> = [
-    { 'label': 'profile',
-      'path': 'profile'
+    {
+      label: 'Movies',
+      link: './movies',
+      index: 0
     },
-    { 'label': 'movies',
-      'path': 'movies'
+    {
+      label: 'Profile',
+      link: './profile',
+      index: 1
     }
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe(res => {
+      this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
+    });
   }
 
 }
