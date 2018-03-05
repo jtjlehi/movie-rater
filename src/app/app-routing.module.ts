@@ -14,37 +14,22 @@ import {ProfileTabComponent} from './home-page/profile-tab/profile-tab.component
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomePageComponent
-  },
-  {
-    path: 'upcoming',
-    component: UpcomingComponent
-  },
-  {
-    path: 'current',
-    component: CurrentMoviesComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'movies',
-    component: MoviesTabComponent,
-  },
-  {
-    path: 'profile',
-    component: ProfileTabComponent,
-  },
-  {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent
+    path: 'home',
+    component: HomePageComponent,
+    children: [
+      {
+        path: 'movies',
+        component: MoviesTabComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileTabComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      },
+    ]
   },
 ];
 
