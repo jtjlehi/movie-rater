@@ -1,4 +1,4 @@
-<div class="homePage">
+<!-- <div class="homePage">
   <mat-tab-group>
     <mat-tab>
       <ng-template mat-tab-label>
@@ -15,6 +15,24 @@
       <app-wish-list></app-wish-list>
     </mat-tab>
   </mat-tab-group>
+</div> -->
+<div class="homePage" >
+  <nav mat-tab-nav-bar
+    backgroundColor="secondary"
+    color="primary" >
+    <a mat-tab-link
+      *ngFor="let navLink of navLinks; let i = index"
+      [routerLink]="navLink.link"
+      routerLinkActive="mat-tab-link-active"
+      #rla="routerLinkActive"
+      [active]="activeLinkIndex === i"
+      (click)="activeLinkIndex = i"
+      [routerLinkActiveOptions]="{exact: true}" >
+      {{navLink.label}}
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>
 </div>
 
 
