@@ -14,7 +14,7 @@ import {ProfileTabComponent} from './home-page/profile-tab/profile-tab.component
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomePageComponent
   },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
