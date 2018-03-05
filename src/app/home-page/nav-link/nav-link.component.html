@@ -1,3 +1,9 @@
-<p>
-  nav-link works!
-</p>
+<a mat-tab-link
+  [routerLink]="link.link"
+  routerLinkActive="mat-tab-link-active"
+  #rla="routerLinkActive"
+  [active]="activeLink"
+  (click)="activeLinkIndex = link.index"
+  [routerLinkActiveOptions]="{exact: true}" >
+  {{link.label}}
+</a>

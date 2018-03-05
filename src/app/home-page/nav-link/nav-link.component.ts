@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-link',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-link.component.scss']
 })
 export class NavLinkComponent implements OnInit {
+
+  @Input() link: {
+    label: string;
+    link: string;
+    index: number;
+  };
+  activeLink: boolean;
 
   constructor() { }
 
