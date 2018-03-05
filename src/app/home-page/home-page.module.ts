@@ -15,7 +15,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FriendCardComponent } from './friend-card/friend-card.component';
 import { MoviesTabComponent } from './movies-tab/movies-tab.component';
 import { ProfileTabComponent } from './profile-tab/profile-tab.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -33,7 +32,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     FriendCardComponent,
     MoviesTabComponent,
     ProfileTabComponent,
-    NavBarComponent,
   ],
   providers: [
     MovieService,
