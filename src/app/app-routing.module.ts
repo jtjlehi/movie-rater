@@ -30,6 +30,14 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'movies',
+    component: MoviesTabComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileTabComponent,
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -37,14 +45,6 @@ const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
-  },
-  {
-    path: 'movies',
-    component: MoviesTabComponent,
-  },
-  {
-    path: 'profile',
-    component: ProfileTabComponent,
   },
 ];
 
