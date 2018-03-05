@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  /*navLinks: object[] = [
+  navLinks: Array<{
+    label: string;
+    path: string;
+  }> = [
     { 'label': 'profile',
       'path': 'profile'
     },
@@ -15,7 +18,6 @@ export class HomePageComponent implements OnInit {
       'path': 'movies'
     }
   ];
-*/
   constructor() { }
 
   ngOnInit() {
