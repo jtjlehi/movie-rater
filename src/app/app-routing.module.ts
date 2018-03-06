@@ -26,10 +26,20 @@ const routes: Routes = [
         component: ProfileTabComponent
       },
       {
-        path: '**',
-        component: PageNotFoundComponent
-      },
+        path: '',
+        redirectTo: '/home/movies',
+        pathMatch: 'full'
+      }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/home/movies',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   },
 ];
 
