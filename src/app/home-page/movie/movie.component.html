@@ -15,20 +15,19 @@
       Remove From Wish List
     </button>
 
-    <div *ngIf="!authService.authenticated" matTooltip="Log in to add movies to your Wishlist!"><button *ngIf="!inWishlist"
-      mat-raised-button
-      (click)="addMovieToWishlist()"
-            (click)="openSnackBar(message, done)"
-      color="accent"
-      [disabled]="!authService.authenticated">
-      Add To Wish List
-    </button>
+    <div *ngIf="!authService.authenticated" matTooltip="Log in to add movies to your Wishlist!">
+      <button *ngIf="!inWishlist"
+        mat-raised-button
+        (click)="addMovieToWishlist()"
+        color="accent"
+        [disabled]="!authService.authenticated">
+        Add To Wish List
+      </button>
     </div>
     <div *ngIf="authService.authenticated">
       <button *ngIf="!inWishlist"
               mat-raised-button
               (click)="addMovieToWishlist()"
-              (click)="openSnackBar(message, done)"
               color="accent">
       Add To Wish List
     </button>

@@ -25,7 +25,13 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
   }
   addMovieToWishlist() {
-    this.wishlistService.addMovie(this.movie);
+    this.wishlistService.addMovie(this.movie)
+    .then((message) => {
+      this.openSnackBar(message, 'done');
+    })
+    .catch((error) => {
+      this.openSnackBar(error, 'done');
+    });
   }
   removeMovieFromWishlist() {
     this.wishlistService.removeMovie(this.movie.fireId);
