@@ -11,7 +11,7 @@ import {
 } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { Query, QuerySnapshot } from '@firebase/firestore-types';
+import { Query } from '@firebase/firestore-types';
 
 @Injectable()
 export class WishlistService {

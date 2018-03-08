@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-import { Configuration } from '../../Services/configuration.interface';
+import { Configuration } from '../../core/movieDB/configuration.interface';
 
 @Injectable()
 export class ImgService {
 
-  private imageUrl: string = 'https://api.themoviedb.org/3/configuration?api_key='
+  private imageUrl: string = 'https://api.themoviedb.org/3/configuration?api_key=';
   private apiKey: string = 'f1dc689823def4f561ce96b21153f793';
   public imgUrls: string[];
 
@@ -19,7 +19,7 @@ export class ImgService {
     return this.httpClient
       .get<Configuration>(this.imageUrl + this.apiKey);
   }
-  
+
   getImgUrls(): Promise<string[]> {
     return this.getConfiguration().toPromise().then(confData => {
       this.imgUrls = confData.images.poster_sizes.map(value => {

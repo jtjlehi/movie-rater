@@ -1,4 +1,4 @@
-///<reference path="../../../node_modules/rxjs/operators/catchError.d.ts"/>
+///<reference path="../../../../node_modules/rxjs/operators/catchError.d.ts"/>
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators/catchError';
 import { map } from 'rxjs/operators/map';
 import * as _ from 'lodash';
 
-import { Movie } from '../Services/movies.interface';
+import { Movie } from './movies.interface';
 import { Configuration } from './configuration.interface';
 
 
@@ -17,7 +17,7 @@ export class MovieService {
   private movieUrl: string = 'https://api.themoviedb.org/3/movie/';
   private apiKey: string = 'f1dc689823def4f561ce96b21153f793';
   private Movies: string;
-  private imageUrl:string = 'https://image.tmdb.org/t/p/w500';
+  private imageUrl: string = 'https://image.tmdb.org/t/p/w500';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -57,7 +57,7 @@ export class MovieService {
             description: `movie poster for ${movie.title}`
           },
           public_rating: movie.vote_average
-        }
+        };
       }).value();
     return returnMovies;
   }
