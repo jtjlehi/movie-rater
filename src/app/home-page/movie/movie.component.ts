@@ -19,7 +19,7 @@ export class MovieComponent implements OnInit {
   constructor(
     private wishlistService: WishlistService,
     private snackBar: MatSnackBar,
-    private authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
