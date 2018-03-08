@@ -2,8 +2,6 @@
   <mat-toolbar-row>
     <span class="phoneHidden">Movie Rater Application</span>
     <div class="spaceBetween">
-      <button mat-button
-        routerLink='/home' >Home Page</button>
       <button mat-button *ngIf='!loggedIn'
         (click)="openLogin()" >Login</button>
       <button mat-button *ngIf='loggedIn'

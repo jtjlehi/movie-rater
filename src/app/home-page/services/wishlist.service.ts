@@ -77,6 +77,7 @@ export class WishlistService {
 
   // displays the users wishlist
   public displayWishList(): Subject<MovieObj[]> {
+    console.log(this.wishlistObservable.observers);
     return this.wishlistObservable;
   }
 

@@ -43,3 +43,15 @@ mat-card-title{
     padding: 3px;
   }
 }
+.hide{
+  position:absolute;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+}
+.top{
+  z-index: 1;
+}
+.background{
+  background-color: black;
+}

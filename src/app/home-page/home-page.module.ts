@@ -15,12 +15,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FriendCardComponent } from './friend-card/friend-card.component';
 import { MoviesTabComponent } from './movies-tab/movies-tab.component';
 import { ProfileTabComponent } from './profile-tab/profile-tab.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { NavLinkComponent } from './nav-link/nav-link.component';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   declarations: [
     CurrentMoviesComponent,
@@ -31,6 +34,7 @@ import { ProfileTabComponent } from './profile-tab/profile-tab.component';
     FriendCardComponent,
     MoviesTabComponent,
     ProfileTabComponent,
+    NavLinkComponent,
   ],
   providers: [
     MovieService,
