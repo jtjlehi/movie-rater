@@ -26,6 +26,7 @@ img{
     left: 50%;
     margin-left: -570px;
     background: url('../../assets/img/movies-desktop.png') no-repeat;
+    z-index:-1;
   }
 @media only screen and (min-width: 1140px){
   .image{
